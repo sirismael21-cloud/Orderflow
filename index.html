@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Order Flow Bot</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Order Flow Bot</h1>
+    <span id="badge" class="badge">connecting…</span>
+  </header>
+
+  <section class="banner" id="halt-banner" hidden>
+    ⚠️ <span id="halt-reason"></span>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <div class="label">Symbol</div>
+      <div class="value" id="symbol">–</div>
+    </div>
+    <div class="card">
+      <div class="label">Last Price</div>
+      <div class="value" id="price">–</div>
+    </div>
+    <div class="card">
+      <div class="label">Order Book Imbalance</div>
+      <div class="value" id="obi">–</div>
+      <div class="bar"><div class="bar-fill" id="obi-fill"></div></div>
+    </div>
+    <div class="card">
+      <div class="label">Cumulative Volume Delta</div>
+      <div class="value" id="cvd">–</div>
+    </div>
+  </section>
+
+  <section class="card wide">
+    <div class="label">Position</div>
+    <div id="position">Flat</div>
+  </section>
+
+  <section class="controls">
+    <button id="startBtn" class="btn btn-go">Start Bot</button>
+    <button id="stopBtn" class="btn btn-stop">Stop Bot</button>
+    <button id="closeBtn" class="btn btn-warn">Close Position</button>
+    <button id="killBtn" class="btn btn-kill">KILL SWITCH</button>
+  </section>
+
+  <section class="card wide">
+    <div class="label">Balances</div>
+    <div id="balances">–</div>
+  </section>
+
+  <section class="card wide">
+    <div class="label">Log</div>
+    <div id="log" class="log"></div>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

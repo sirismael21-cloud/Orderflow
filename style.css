@@ -1,0 +1,114 @@
+:root {
+  --bg: #0b0e14;
+  --card: #131824;
+  --border: #232a3a;
+  --text: #e6e9ef;
+  --muted: #8891a5;
+  --green: #2fd27a;
+  --red: #ff5c5c;
+  --amber: #f5b942;
+  --blue: #4f8cff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 16px;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+h1 { font-size: 1.3rem; margin: 0; }
+
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.badge.live { color: var(--green); border-color: var(--green); }
+.badge.testnet { color: var(--amber); border-color: var(--amber); }
+
+.banner {
+  background: rgba(255, 92, 92, 0.12);
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.card.wide { grid-column: 1 / -1; margin-bottom: 12px; }
+
+.label { font-size: 0.75rem; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+.value { font-size: 1.4rem; font-weight: 600; }
+
+.bar {
+  margin-top: 8px;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--red);
+  overflow: hidden;
+}
+.bar-fill { height: 100%; background: var(--green); width: 50%; }
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.btn {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-go { background: var(--green); color: #06210f; }
+.btn-stop { background: var(--border); color: var(--text); }
+.btn-warn { background: var(--amber); color: #241a02; }
+.btn-kill { background: var(--red); color: #2a0505; grid-column: 1 / -1; }
+
+.log {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  color: var(--muted);
+  max-height: 220px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+#position { font-size: 1rem; }
+#balances { font-size: 0.9rem; color: var(--muted); }
